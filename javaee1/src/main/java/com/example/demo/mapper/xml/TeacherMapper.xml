@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.TeacherMapper">
+    <resultMap id="TeacherResultMap" type="com.example.demo.entity.Teacher">
+        <id property="teacherID" column="teacherID" />
+        <result property="teachername" column="teachername" />
+        <result property="userID" column="userID" />
+    </resultMap>
+    <select id="findTeacherByID" resultMap="TeacherResultMap">
+        SELECT * FROM teacher WHERE teacherID = #{teacherID}
+    </select>
+</mapper>

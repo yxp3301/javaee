@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.StuClassMatchMapper">
+    <resultMap id="StuClassMatchResultMap" type="com.example.demo.entity.StuClassMatch">
+        <id property="studentID" column="studentID" />
+        <result property="classID" column="classID" />
+    </resultMap>
+    <select id="findStuClassMatchByStudentAndClass" resultMap="StuClassMatchResultMap">
+        SELECT * FROM stu_class_match WHERE studentID = #{studentID} AND classID = #{classID}
+    </select>
+</mapper>

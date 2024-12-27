@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register</title>
+</head>
+<body>
+<h2>Register</h2>
+<form action="/app/register" method="post">
+    Username: <input type="text" name="username" required><br>
+    Password: <input type="password" name="password" required><br>
+    User Role:
+    <select name="userroleID" required>
+        <!-- 假设roleID 2 是教师，3 是学生，其他值可以根据您的数据库调整 -->
+        <option value="2">Teacher</option>
+        <option value="3">Student</option>
+        <!-- 如果有其他角色，也可以在这里添加 -->
+    </select><br>
+    <input type="submit" value="Register">
+</form>
+<p th:if="${error}" th:text="${error}" style="color: red;"></p>
+<p>Already have an account? <a href="/app/login">Login here</a></p>
+</body>
+</html>

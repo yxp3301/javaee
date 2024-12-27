@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.CheckInRecordMapper">
+    <resultMap id="CheckInRecordResultMap" type="com.example.demo.entity.CheckInRecord">
+        <id property="recordID" column="recordID" />
+        <result property="studentID" column="studentID" />
+        <result property="checkTimeID" column="check_timeID" />
+        <result property="completionStatus" column="completion_status" />
+        <result property="sequenceNumber" column="sequence_number" />
+        <result property="createdAt" column="created_at" />
+    </resultMap>
+    <select id="findCheckInRecordByStudentAndCheckTime" resultMap="CheckInRecordResultMap">
+        SELECT * FROM check_in_record WHERE studentID = #{studentID} AND check_timeID = #{checkTimeID}
+    </select>
+</mapper>

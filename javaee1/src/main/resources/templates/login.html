@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+</head>
+<body>
+<h2>Login</h2>
+<form action="/app/login" method="post">
+    Username: <input type="text" name="username" required><br>
+    Password: <input type="password" name="password" required><br>
+    Role: <select name="userroleID" required>
+    <option value="">--Please choose an option--</option>
+    <option value="1">管理员</option>
+    <option value="2">教师</option>
+    <option value="3">学生</option>
+    <!-- Other roles can be added here if needed -->
+</select><br>
+    <input type="submit" value="Login">
+</form>
+<p th:if="${error}" th:text="${error}" style="color: red;"></p>
+<p>Don't have an account? <a href="/app/register">Register here</a></p>
+</body>
+</html>

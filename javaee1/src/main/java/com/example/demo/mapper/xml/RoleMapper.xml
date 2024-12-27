@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.RoleMapper">
+    <resultMap id="RoleResultMap" type="com.example.demo.entity.Role">
+        <id property="roleID" column="roleID" />
+        <result property="rolename" column="rolename" />
+    </resultMap>
+    <select id="findRoleByID" resultMap="RoleResultMap">
+        SELECT * FROM role WHERE roleID = #{roleID}
+    </select>
+</mapper>
